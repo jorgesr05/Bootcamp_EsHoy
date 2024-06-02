@@ -12,16 +12,16 @@ public class Test {
         long nit = 1234567891; // long-> valor númerico grande
         
         /* Variables no primitivas */
-        Integer edad = 28; // Int -> númerico entero
-        Double estatura = 1.85; // Double -> númerico decimal
-        String genero = 'M'; // String -> cadena de caracteres
-        Boolean casado = true; // Boolean -> valor lógico true/false
-        Long nit = 1234567891; // Long-> valor númerico grande
+        Integer edad2 = 28; // Int -> númerico entero
+        Double estatura2 = 1.85; // Double -> númerico decimal
+        String genero2 = "M"; // String -> cadena de caracteres
+        Boolean casado2 = true; // Boolean -> valor lógico true/false
+        Long nit2 = (long) 123456; // Long-> valor númerico grande
         
         /* OBJETIVO ES REDUCIR CUALQUIER PROCESO A UNA SERIE DE INSTRUCCIONES */
         
         /* PARA COMPRAR HUEVOS */
-        Integer numeroHuevos = 3;
+        Integer numeroHuevos = 6;
 
         if(numeroHuevos<4){
             /* Si la es verdadera ejecuta el código */
