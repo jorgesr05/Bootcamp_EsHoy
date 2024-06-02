@@ -1,4 +1,4 @@
-package Java-JS.AbrilJS24;
+package Java_JS.AbrilJS24;
 
 public class Test {
     
