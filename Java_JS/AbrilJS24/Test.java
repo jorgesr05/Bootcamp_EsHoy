@@ -21,12 +21,18 @@ public class Test {
         /* OBJETIVO ES REDUCIR CUALQUIER PROCESO A UNA SERIE DE INSTRUCCIONES */
         
         /* PARA COMPRAR HUEVOS */
-        Integer numeroHuevos = 6;
+        Integer numeroHuevos = -4;
 
-        if(numeroHuevos<4){
+        if(numeroHuevos<4 && numeroHuevos >=0){
             /* Si la es verdadera ejecuta el código */
             System.out.println("Hay que comprar más huevos");
         } 
+        else if (numeroHuevos >= 8) {
+            System.out.println("Hay que cocinarlos pronto");
+        }
+        else if(numeroHuevos <0){
+            System.out.println("Estás debiendo huevos");
+        }
         else {
             /* Cuando la condición del if no se cumple ejecuta el código else */
             System.out.println("Hay suficientes huevos");
