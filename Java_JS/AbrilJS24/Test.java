@@ -2,6 +2,34 @@ package Java_JS.AbrilJS24;
 
 public class Test {
     
+    public static void saludar(){
+        System.out.println("Hola");
+
+    }
+
+    public static void saludar(String nombre){
+        System.out.print("Hola ");
+        System.out.println(nombre);
+    }
+    
+    public static void saludar(String nombre, Double hora){
+        String saludo = "";
+        if(hora>0 && hora<12){
+            saludo = saludo.concat("Buenos días ");
+        }
+        else if(hora<19){
+            saludo = saludo.concat("Buenas tardes ");
+        }
+        else {
+            saludo = saludo.concat("Buenas noches ");
+        }
+        saludo = saludo.concat(nombre);
+        
+        System.out.println(saludo);
+    }
+    
+
+
     public static void main(String[] args) {
         
         /* Variables primitivas */
@@ -38,7 +66,51 @@ public class Test {
             System.out.println("Hay suficientes huevos");
         }
 
+        /* SWITCH */
+        String saludo = "Hola";
+        System.out.println(saludo);
+
+        switch (edad) {
+            case 7:
+                System.out.println("Niño");
+                break;
+            case 17:
+                System.out.println("Joven");
+                break;
+            case 27:
+                System.out.println("Señor");
+                break;
+            default:
+                System.out.println("Mister");
+                break;
+        }
+
+        System.out.println("Hola");
+        System.out.println(genero == 'M'? "Señor" :"Señora");
+
+        System.out.println("Prueba");
+        System.out.println(genero2 == "M"? "Varón":"Madamme");
+
+        System.out.println("Test");
+        System.out.println(casado? "Happy":"Unhappy");
+
+        /* String */
+
+        String greetings = "Hi There";
+        int lenght = greetings.length();
+        System.out.println("La longitud de la frase es: "+ lenght);
+        greetings = greetings.concat(" Mr Jorge");
+        System.out.println(greetings);
+
+        String sentence = "   ¡espacios por todas partes!   ";
+        System.out.println(sentence.trim());
+
+        saludar("Jorge",20.5);
+        saludar();
+        saludar("Juan");
+        saludar("Katty",16.3);
 
 
     }
+
 }
