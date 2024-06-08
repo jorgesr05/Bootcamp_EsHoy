@@ -6,9 +6,11 @@ public class VehiculoTest {
         
         /* Instancia */
 
-        Vehiculo mustang = new Vehiculo();
-            mustang.setPasajeros(4);
-            System.out.println(mustang.getPasajeros());
+        Vehiculo mustang = new Vehiculo(4,260,4,1450,2,"muscle","automovil",true,4.0);
+        
+        Vehiculo hillux = new Vehiculo(180, 2500, "runner", 3);
+        System.out.println(hillux.getVelocidad());
+        System.out.println(hillux.getRuedas());
 
     }
 }
