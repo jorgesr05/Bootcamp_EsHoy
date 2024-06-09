@@ -94,12 +94,4 @@ public class CuentaBancaria {
     public static double getDineroAlmacenado() {
         return dineroAlmacenado;
     }
-
-    
-
-
-    
-    
-    
-    
 }
