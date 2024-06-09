@@ -1,5 +1,7 @@
 package Java_JS.MayoJS02;
 
+import java.util.ArrayList;
+
 public class Vehiculo {
  
     private int pasajeros;
@@ -12,9 +14,55 @@ public class Vehiculo {
     private boolean automatico;
     private double cilindraje;
 
+    public static int carrosFabricados = 0;
+    public static ArrayList<Vehiculo> listaVehiculos = new ArrayList<Vehiculo>();
+
+    public static Vehiculo getVehiculoVeloz(){
+        Vehiculo elMasRapido = listaVehiculos.get(0);
+        for (Vehiculo vehiculo : listaVehiculos) {
+            if(vehiculo.getVelocidad()>elMasRapido.getVelocidad()){
+                elMasRapido=vehiculo;
+            }
+        }
+        return elMasRapido;
+    }
+
+
+    /* Funcion para acelerar un carro, recibe la velocidad objetivo int velocidad */
+
+    public void acelerar(int velocidad){
+        if(velocidad <= this.velocidad){
+            System.out.println("Acelerando a "+velocidad);
+        }
+        else {
+            System.out.println("Se quemó el motor");
+        }
+        
+        
+    }
+
+    public void acelerar(int velocidad, int incrementos){
+        
+        int velocidadActual = 0;
+
+        while(velocidadActual < velocidad) {
+            velocidadActual += incrementos;
+            if(velocidadActual <= this.velocidad){
+                System.out.println("Acelerando a "+ velocidadActual);
+            }
+            else {
+                System.out.println("Se quemó el motor");
+            }
+       }
+    }
+
     public Vehiculo(int pasajeros, int velocidad, int ruedas, int peso, int puertas, String carroceria, String categoria, boolean automatico, double cilindraje){
         this.pasajeros = pasajeros;
-        this.velocidad = velocidad;
+        if (velocidad<=370) {
+            this.velocidad = velocidad;
+        } else{
+            this.velocidad = 340;
+        }        
         this.ruedas = ruedas;
         this.peso =peso;
         this.puertas = puertas;
@@ -22,22 +70,41 @@ public class Vehiculo {
         this.categoria = categoria;
         this.automatico = automatico;
         this.cilindraje = cilindraje;
+        carrosFabricados +=1;
+        listaVehiculos.add(this);
 
     }
 
     
 
-    /* Getters and Setters */
+   
+
+    public Vehiculo(int velocidad, int ruedas) {
+        this.velocidad = velocidad;
+        this.ruedas = ruedas;
+        carrosFabricados +=1;
+        listaVehiculos.add(this);
+    }
+
+
+
+
 
     public Vehiculo(int velocidad, int peso, String carroceria, double cilindraje) {
         this.velocidad = velocidad;
         this.peso = peso;
         this.carroceria = carroceria;
         this.cilindraje = cilindraje;
+        carrosFabricados +=1;
+        listaVehiculos.add(this);
     }
 
+    public Vehiculo(){
+        carrosFabricados +=1;
+        listaVehiculos.add(this);
+    }
 
-
+ /* Getters and Setters */
     public int getPasajeros() {
         return pasajeros;
     }
