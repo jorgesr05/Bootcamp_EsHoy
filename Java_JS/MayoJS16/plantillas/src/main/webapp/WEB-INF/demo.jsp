@@ -11,9 +11,12 @@
     <body>
         <h1>Hola soy una páigina del servidor de java</h1>
         <ul>
-            <li>Elemento 1: <c:out value="${2+3}"/></li>
-            <li>Elemento 2</li>
-            <li>Elemento 3</li>
+            <c:forEach var="j" begin="1" end="10">
+                <li>
+                    Item
+                    <c:out value="${j}"/>
+                </li>
+            </c:forEach>
         </ul>
     </body>
     </html>
