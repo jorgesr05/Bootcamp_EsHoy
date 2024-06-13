@@ -9,7 +9,13 @@ public class ObrasDeArte extends TablaBase{
     private static ArrayList<ObrasDeArte> listaObras = new ArrayList<ObrasDeArte> ();
     private static ArrayList<String> obrasGuardadas = new ArrayList<String>();
 
-    
+    public static ArrayList<String> getObrasGuardadas() {
+        return obrasGuardadas;
+    }
+
+    public static void setObrasGuardadas(ArrayList<String> obrasGuardadas) {
+        ObrasDeArte.obrasGuardadas = obrasGuardadas;
+    }
 
     private String autor;
     private Date creacion;
@@ -43,11 +49,10 @@ public class ObrasDeArte extends TablaBase{
         return text;
     }
 
-
-
     @Override
     public void createRecord() {
         System.out.println("Se ha creado una nueva obra");        
+        obrasGuardadas.add(this.toString());
     }
 
     @Override

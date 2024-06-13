@@ -19,6 +19,8 @@ public class Test {
         System.out.println(ObrasDeArte.getListaObras());
         System.out.println("ID: " + unaNochesEstrellada.getId());
 
+        System.console().readLine("Demórate");
+
         @SuppressWarnings("deprecation")
         ObrasDeArte venusDeMilo = new ObrasDeArte("Alexandros", new Date(-160,1,1), "escultura", "naturalista", "escultura sobre marmol");
 
@@ -30,8 +32,7 @@ public class Test {
 
         @SuppressWarnings("deprecation")
         ObrasDeArte laNovenaSinfonia = new ObrasDeArte("Bethoven", new Date(1824,1,1), "música", "clásica", "composición musical");
-
-        laNovenaSinfonia.createRecord();
+        /* laNovenaSinfonia.createRecord(); */
 
         System.out.println(ObrasDeArte.getContadorObras());
         System.out.println(ObrasDeArte.getListaObras());
@@ -39,7 +40,8 @@ public class Test {
 
         System.out.println("=========================");
 
-        System.out.println(laNovenaSinfonia.toString());
+        /* System.out.println(laNovenaSinfonia.toString()); */
+        System.out.println(ObrasDeArte.getObrasGuardadas());
     }
         
     }
