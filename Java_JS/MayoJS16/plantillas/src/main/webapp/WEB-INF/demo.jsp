@@ -7,6 +7,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
+        <link rel="stylesheet" type="text/css" href="/css/base.css">
+        <script type="text/javascript" src="/js/script.js"></script>
     </head>
     <body>
         <h1>Hola soy una páigina del servidor de java</h1>
