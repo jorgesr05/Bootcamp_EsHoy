@@ -9,14 +9,19 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>
+        Hola ${currentUser}
+    </h1>
     <form action="/login" method="post">
         <div>
             <label for="">user</label>
             <input type="text" name="userInput" id="">
+            <p style="color :red">${userError}</p>
         </div>
         <div>
             <label for="">password</label>
             <input type="password" name="passwordInput" id="">
+            <p style="color :red">${passwordError}</p>
         </div>
         <button type="submit">Enviar</button>
 

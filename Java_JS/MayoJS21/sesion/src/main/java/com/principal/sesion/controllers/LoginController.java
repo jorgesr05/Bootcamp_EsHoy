@@ -2,9 +2,13 @@ package com.principal.sesion.controllers;
 
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import jakarta.servlet.http.HttpSession;
 
 
 
@@ -13,16 +17,30 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class LoginController {
 
     @GetMapping("/login")
-    public String getMethodName() {
+    public String getMethodName(HttpSession session,RedirectAttributes redirectAttributes, Model model) {
+        model.addAttribute("currentUser", session.getAttribute("user"));
+
+       /*  HashMap errores= redirectAttributes.getFlashAttributes();
+        model.addAttribute("errors", redirectAttributes.getFlashAttributes()); */
         return "login.jsp";
     }
     
     @PostMapping("/login")
-    public String postMethodName(@RequestParam("userInput") String user, @RequestParam("passwordInput") String password) {
+    public String postMethodName(HttpSession session, RedirectAttributes redirectAttributes, @RequestParam("userInput") String user, @RequestParam("passwordInput") String password) {
         
+        if(user.length()<4){
+            redirectAttributes.addFlashAttribute("userError", "user too short");
+            
+
+        }
+
+        if(password.length()<8){
+            redirectAttributes.addFlashAttribute("passwordError","password must be at least 8 char");
+        }
         System.out.println(user);
         System.out.println(password);
-        return "";
+        session.setAttribute("user", user);
+        return "redirect:/login";
     }
     
 
